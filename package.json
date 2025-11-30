@@ -5,10 +5,14 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "hide-launcher": "node ./scripts/hide-launcher.js",
+    "show-launcher": "node ./scripts/show-launcher.js",
+    "android:build-hidden": "npm run hide-launcher && cd android && gradlew.bat assembleRelease",
+    "android:build-visible": "npm run show-launcher && cd android && gradlew.bat assembleRelease"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
